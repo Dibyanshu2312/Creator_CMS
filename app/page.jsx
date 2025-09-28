@@ -1,5 +1,6 @@
 
 "use client";
+import LazySection from "@/components/Lazysection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { features, platformTabs, socialProofStats, testimonials } from "@/lib/data";
@@ -32,7 +33,7 @@ export default function Home() {
             transition: "all 0.3 ease-out",
         }}className="fixed w-96 h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl pointer-events-none z-0"/>
     
-<section className="relative z-10 mt-48 px-4 sm:px-6">
+<LazySection className="relative z-10 mt-48 px-4  sm:px-6">
      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12">
         <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
          <div>
@@ -68,9 +69,9 @@ export default function Home() {
     <Image src="/banner.png" alt="Platform banner" width={500} height={700} className="w-full h-auto object-contain" priority/>
 </div>
 </div>
-</section>
+</LazySection>
 
-<section id="features"
+<LazySection id="features"
 className="relative mt-14 z-10 py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-r from-gray-900/50 to-purple-900/20">
 <div className="max-w-7xl mx-auto">
     <div className="text-center mb-12 sm:mb-16 lg:mb-20">
@@ -99,9 +100,9 @@ className="group trasition-all duration-300 hover:scale-105 card-glass">
     </div>
 </div>   
     
-</section> 
+</LazySection> 
 
-<section className="relative z-10 py-16 sm:py-24 px-4 sm:px-6">
+<LazySection className="relative z-10 py-16 sm:py-24 px-4 sm:px-6">
     <div className="max-w-7xl mx-auto">
     <div className="text-center mb-12 sm:mb-16 lg:mb-20">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6"><span className="gradient-text-primary" >How it works</span></h2>
@@ -154,9 +155,9 @@ className="group trasition-all duration-300 hover:scale-105 card-glass">
       </div>
     </div>
     </div>
-</section>
+</LazySection>
 
-<section className="relative mt-14 z-10 py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-r from-gray-900/50 to-purple-900/20">
+<LazySection className="relative mt-14 z-10 py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-r from-gray-900/50 to-purple-900/20">
 <div className="max-w-7xl mx-auto text-center">
     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-12 sm:mb-16"><span className="gradient-text-primary" >Loved by Creators Worldwide</span></h2>
     
@@ -180,9 +181,9 @@ className="group trasition-all duration-300 hover:scale-105 card-glass">
     </div>
 
 </div>
-</section>
+</LazySection>
 
- <section
+ <LazySection
         id="testimonials"
         className="relative z-10 py-16 sm:py-24 px-4 sm:px-6"
       >
@@ -237,10 +238,10 @@ className="group trasition-all duration-300 hover:scale-105 card-glass">
             ))}
           </div>
         </div>
-</section>
+</LazySection>
 
   {/* CTA Section */}
-      <section className="relative z-10 py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-r from-gray-900/50 to-purple-900/20">
+      <LazySection className="relative z-10 py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-r from-gray-900/50 to-purple-900/20">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 sm:mb-8">
             <span className="gradient-text-primary">Ready to create?</span>
@@ -272,7 +273,7 @@ className="group trasition-all duration-300 hover:scale-105 card-glass">
             </Link>
           </div>
         </div>
-      </section>
+      </LazySection>
 
       {/* Footer */}
       <footer className="relative z-10 border-t py-8 px-4 sm:px-6">

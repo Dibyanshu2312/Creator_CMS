@@ -1,52 +1,49 @@
 import { Inter } from "next/font/google";
-import Header, {header}from "@/components/header";
-
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ConvexClientProvider } from "./ConvexClientProvider";
+import { Toaster } from "sonner";
+import Header from "@/components/header";
 import { ClerkProvider } from "@clerk/nextjs";
 import { shadesOfPurple } from "@clerk/themes";
+import { ConvexClientProvider } from "@/components/ConvexClientProvider";
 
 
-const inter = Inter({subsets:["latin"]});
+
+
+const inter = Inter({ subsets: ["latin"] });
+
 export const metadata = {
-  title: "Create Next App",
-  description: "content creation powered by AI",
+  title: "AI Content Platform",
+  description: "",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.className} antialiased`}
-      >
+      <head>{/* <link rel="icon" href="/logo-text.png" sizes="any" /> */}</head>
+      <body className={`${inter.className}`}>
         <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-          
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
           <ClerkProvider
-      appearance={{
-        baseTheme: shadesOfPurple,
-      }}
-    >
+            publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+            appearance={{
+              baseTheme: shadesOfPurple,
+            }}
+          >
             <ConvexClientProvider>
-            {/*Header*/}
-            <Header />
-            
-            <main className="bg-slate-900  text-white overflow-x-hidden min-h-screen">
-            {/*Nav*/}
+              <Header />
+              <main className="bg-slate-900 min-h-screen text-white overflow-x-hidden">
+                <Toaster richColors />
 
-
-            {children}
-            </main>
-            {/*Footer*/}
+                {children}
+              </main>
             </ConvexClientProvider>
-            </ClerkProvider> 
-            
-          </ThemeProvider>
+          </ClerkProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

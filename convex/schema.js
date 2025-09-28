@@ -9,7 +9,7 @@ export default defineSchema({
     imageUrl: v.optional(v.string()),
     username: v.optional(v.string()),
     tokenIdentifier: v.string(),
-    
+    createdAt: v.float64(),
     lastActiveAt: v.float64(),
   })
     .index("by_token", ["tokenIdentifier"])
