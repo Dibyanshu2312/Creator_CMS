@@ -1,12 +1,15 @@
 "use client"
-import { api } from '@/convex/_generated/api'
-import { useQuery } from 'convex/react'
+import { useAuthenticatedUser } from '@/Hooks/use-authenticated-user'
+import { AuthTest } from '@/components/AuthTest'
+import { getCurrentUser } from '@/convex/users'
 import React from 'react'
 
 const settingsPage = () => {
-const data = useQuery(api.users.getCurrentUser);
+  const data = getCurrentUser();
+  console.log(data);
   return (
-    <div>settingsPage</div>
+    <div>settings</div>
+      
   )
 }
 

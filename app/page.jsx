@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 
 
 export default function Home() {
+
    const[mousePosition,setMousePostion] =useState({x:0,y:0});
    const[active, setActiveTab]=useState(0);
    useEffect(()=>
@@ -24,8 +25,7 @@ export default function Home() {
     };
 },[]);
    
-   return (
-   <div className="min-h-screen bg-black text-white overflow-hidden relative">
+   return (<div className="min-h-screen bg-black text-white overflow-hidden relative">
         <div className="fixed inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-green-900/20 animate-pulse"/>
         <div style={{
             left: mousePosition.x - 192,
